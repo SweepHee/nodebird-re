@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <div>
+        <nav>
             <v-toolbar dark color="green">
                 <v-toolbar-title>
                     <nuxt-link to="/">NodeBird</nuxt-link>
@@ -16,16 +16,24 @@
                     </v-btn>
                 </v-toolbar-items>
             </v-toolbar>
-        </div>
+        </nav>
+    <v-row no-gutters>
+        <v-col cols="12" md="4" >
+            <login-form />
+        </v-col>
+        <v-col cols="12" md="8">
+            <nuxt />
+        </v-col>
+    </v-row>
     </v-app>
 </template>
 
 <script>
+import LoginForm from "~/components/LoginForm";
+
 export default {
-    head() {
-        return {
-            title: "NodeBird",
-        }
+    components: {
+        LoginForm,
     }
 }
 </script>

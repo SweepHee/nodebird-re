@@ -22,4 +22,7 @@ import는 nuxt.config.js 에 한다!
 # axios 설치
 npm i @nuxtjs/axios axios
 
+# eslint 설치
+npm i -D eslint eslint-plugin-vue (-D는 개발용)
+
 ```
