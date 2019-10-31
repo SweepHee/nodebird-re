@@ -10,6 +10,7 @@
             :success-messages="successMesages"
             @input="onChangeTextarea"
         />
+        <v-btn color="green" dark absolute top right type="submit">삐약</v-btn>
     </v-form>
 </template>
 
@@ -46,7 +47,7 @@ export default {
         },
         onSubmitForm() {
             if(this.$refs.form.validate()) {
-                this.$sotre.dispatch("posts/addComment", {
+                this.$store.dispatch("posts/addComment", {
                     id: Date.now(),
                     postId: this.postId,
                     content: this.content,
