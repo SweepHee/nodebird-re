@@ -66,7 +66,8 @@ export default {
         removeFollower(id) {
             this.$store.dispatch("users/removeFollower", { id });
         },
-    }
+    },
+    middleware: "authenticated",
 }
 </script>
 
