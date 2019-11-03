@@ -55,6 +55,11 @@ export const mutations = {
 // 비동기처리    
 export const actions = {
     signUp({ commit, state }, payload) {
+        this.$axios.post("/user", {
+            email: payload.email,
+            nickname: payload.nickname,
+            password: payload.password
+        });
         commit("setMe", payload);
     },
     logIn({commit, state}, payload) {

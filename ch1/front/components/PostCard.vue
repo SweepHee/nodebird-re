@@ -18,7 +18,6 @@
                 </v-btn>
                 <v-btn text color="orange">
                     <v-icon>mdi-heart-outline</v-icon>
-
                 </v-btn>
                 <v-btn text color="orange" @click="onToggleComment">
                     <v-icon>mdi-comment-outline</v-icon>
