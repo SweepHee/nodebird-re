@@ -74,4 +74,26 @@ npm i express    -> 익스프레스 설치
 - npm i -D nodemon
     ㄴ 백엔드서버 알아서 업데이트
     ㄴ 백엔드 package.json 스크립트->"dev" : "nodemon app.js"
+
+# cors 오류 해결
+- npm i cors
+    
+# 비밀번호 암호화 bcrypt
+- npm i bcrypt
+    ㄴ 윈도우에서 에러날때가많다. 공식문서참조
+
+# 패스포트 로그인을 도와준다!
+npm i passport passport-local
+    ㄴ passport-local, passport-kakao 등등 서비스마다 존재.
+
+# 익스프레스 세션
+npm i express-session
+    ㄴ 패스포트에서 session 사용해야하는데 이게 있어야 함.
+
+# 쿠키파서
+npm i cookie-parser
+
+# 모건
+npm i morgan
+
 ```

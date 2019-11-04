@@ -59,11 +59,27 @@ export const actions = {
             email: payload.email,
             nickname: payload.nickname,
             password: payload.password
+        }, {
+            withCredentials: true,
+        }).then((data) => {
+            console.log(data);
+            commit("setMe", payload);
+        }).catch((err) => {
+            console.error(err);
         });
-        commit("setMe", payload);
     },
     logIn({commit, state}, payload) {
-        commit("setMe", payload);
+        this.$axios.post("http://localhost:3085/user/login", {
+            email: payload.email,
+            password: payload.password,
+        }, {
+            withCredentials: true,
+            // 백엔드 서버와 주소가 다른 경우 해당 옵션 true 해줘야 응답오는 cookie가 저장된다.
+        }).then((data) => {
+            commit("setMe", payload);
+        }).catch((err) => {
+            console.error(err);
+        })
     },
     logOut({commit, state}, payload) {
         commit("setMe", null);
