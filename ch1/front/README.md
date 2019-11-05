@@ -96,4 +96,29 @@ npm i cookie-parser
 # 모건
 npm i morgan
 
+# 멀터
+npm i multer
+    ㄴ formData는 받기가 까다로움(해석이 까다롭다?). 
+    ㄴ formData 해석하기 편하게해준다.
+
 ```
+
+
+
+
+
+exports.이름 = ...~~ // 대표적이지 않은거 밖으로 내보냄
+
+module.exports = ~~~~ // 가장 중요한거 내보냄.
+
+한 문서에서 exports.~~ 를 여러개 만들었는데
+module.exports를 만들어버리면 module~~이 덮어씌워버려서
+다른곳에서 import 해도 덮어씌워져버린다(?)
+
+
+exports.이름
+
+으로 만든건 다른 문서에서
+
+const { isLoggedIn } = require("경로");
+로 가져올 수 있는데 {  } 는 module을 그냥 구조분해 한 것

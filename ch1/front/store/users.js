@@ -61,9 +61,8 @@ export const actions = {
             password: payload.password
         }, {
             withCredentials: true,
-        }).then((data) => {
-            console.log(data);
-            commit("setMe", payload);
+        }).then((res) => {
+            commit("setMe", res.data);
         }).catch((err) => {
             console.error(err);
         });
@@ -75,14 +74,23 @@ export const actions = {
         }, {
             withCredentials: true,
             // 백엔드 서버와 주소가 다른 경우 해당 옵션 true 해줘야 응답오는 cookie가 저장된다.
-        }).then((data) => {
-            commit("setMe", payload);
+        }).then((res) => {
+            commit("setMe", res.data);
         }).catch((err) => {
             console.error(err);
         })
     },
     logOut({commit, state}, payload) {
-        commit("setMe", null);
+        this.$axios.post("http://localhost:3085/user/logout", {},
+        {
+            withCredentials: true, // 다른서버로 갈 때 항상 적어줘야함!!
+        })
+        .then((data) => {
+            commit("setMe", null);
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     },
     changeNickname({commit}, payload) {
         commit("changeNickname", payload);
