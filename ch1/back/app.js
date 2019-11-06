@@ -10,6 +10,7 @@ const db = require("./models");
 const passportConfig = require("./passport");
 const userRouter = require("./routes/user");
 const postRouter = require("./routes/post");
+const postsRouter = require("./routes/posts");
 const app = express();
 
 
@@ -53,6 +54,7 @@ app.get("/", (req, res) => {
 
 app.use("/user", userRouter);
 app.use("/post", postRouter);
+app.use("/posts", postsRouter);
 
 
 app.listen(3085, () => {
