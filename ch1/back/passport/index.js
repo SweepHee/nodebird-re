@@ -11,7 +11,10 @@ module.exports = () => {
         // 해시된 쿠키값 해제
         // 로그인 후에 모든 요청에 이것이 불러짐.
         try {
-            const user = await db.User.findOne({ where: { id }  })
+            const user = await db.User.findOne({ 
+                where: { id },
+                attributes: ["id", "nickname"],
+            });
             return done(null, user); // req.user, req.isAuthenticated() === true 로 만들어줌.
         }catch (err) {
             console.error(err);

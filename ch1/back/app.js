@@ -17,7 +17,7 @@ const app = express();
 
 
 
-db.sequelize.sync(); // db 실행
+db.sequelize.sync({ force: true }); // db 실행
 // db 테이블 값 변경되었을 때 새로 설정하는 것. force: true
 // 단, 이 경우 안에 있는 데이터 다 삭제됨. 개발 단계에서만 사용할 것
 // 설정한번 변경하면 true로 키고 다시 지우거나 false 처리할 것!!!!
